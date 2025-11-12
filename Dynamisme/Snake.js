@@ -21,6 +21,8 @@ var Score = 0;
 // Contrôle du jeu
 var gameInterval; // pour setInterval
 var gameOver = false;
+var eatSound = new Audio("Dynamisme/eat_bip.mp3");
+var deathSound = new Audio("Dynamisme/death_bip.mp3");
 
 window.onload = function () {
     board = document.getElementById("board");
@@ -67,6 +69,9 @@ function update() {
         document.getElementById("score-zone").innerText = "Score : " + Score;
         snakeBody.push([FoodPX, FoodPY]);
         placeFood();
+
+        eatSound.currentTime = 0;
+        eatSound.play();
     }
 
     // Déplace le corps du serpent
@@ -106,6 +111,8 @@ function update() {
 function endGame() {
     gameOver = true;
     clearInterval(gameInterval);
+    deathSound.currentTime = 0;
+    deathSound.play();
     alert("Game Over! Score final : " + Score);
 }
 
