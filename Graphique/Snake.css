@@ -1,5 +1,125 @@
+/* ===== Body et général ===== */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    background-color: darkgray;
+    font-family: 'Courier New', monospace;
+    background-color: #111;
+    /* noir rétro */
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #00ff00;
+    text-shadow: 2px 2px 0 red, -2px -2px 0 cyan;
+    margin-bottom: 30px;
+}
+
+/* ===== Conteneur principal ===== */
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    /* aligne les colonnes en hauteur */
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* ===== Colonne gauche : info-game ===== */
+#info-game {
+    border: 2px solid #0ff;
+    padding: 25px;
+    box-shadow: 0 0 15px #0ff;
+    color: yellow;
+    font-weight: bold;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #111;
+    border-radius: 10px;
+}
+
+#info-game h3 {
+    margin-bottom: 15px;
+    color: #ffcc00;
+    text-shadow: 1px 1px 2px black;
+}
+
+#info-game img {
+    width: 180px;
+    border: 1px solid #555;
+    background: #222;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px cyan;
+}
+
+/* ===== Colonne centre : jeu ===== */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    max-width: 600px;
+}
+
+#score-zone {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px black, 0 0 8px yellow;
+    user-select: none;
+}
+
+/* Canvas */
+#board {
+    border: 3px solid lime;
+    background: black;
+    box-shadow: 0 0 15px lime, 0 0 25px #00ff00, 0 0 40px #00ff00;
+    width: 500px;
+    height: 500px;
+    display: block;
+}
+
+/* ===== Colonne droite : bouton START ===== */
+#start-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 220px;
+}
+
+/* Bouton START */
+#Start_button {
+    background-color: #d6336c;
+    border: 2px solid #ff3366;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 18px 45px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #ff3366, 0 0 30px #ff6699;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#Start_button:hover {
+    background-color: #ff3366;
+    box-shadow: 0 0 25px #ff6699, 0 0 40px #ff99cc;
+}
+
+/* ===== Effets rétro gaming ===== */
+h1,
+#score-zone,
+#info-game h3 {
+    text-shadow: 1px 1px 2px black, 0 0 5px #0ff;
 }
